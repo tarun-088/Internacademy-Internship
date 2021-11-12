@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <title>Java</title>
+</head>
+<body>
+ <h1 class="heading">COURSE WORLD</h1>
+ <h1 class="name">Java Programming Masterclass covering Java 11 & Java 17
+</h1>
+<div class="container" >
+   <div class="main-video">
+        <div class="video">
+            <video src="/Users/saisuresh/Downloads/java1.mp4" type="video/mp4" controls muted autoplay ></video>
+            <h2 class="title"> 1.INTRODUCTION TO JAVA</h2>
+        </div>
+    </div>
+    <div class="video-list">
+    <div class="vid active">
+       <video  src="/Users/saisuresh/Downloads/py1.mp4" ></video>
+       <h3 class="title"> 1.INTRODUCTION TO JAVA</h3>
+    </div>
+    <div class="vid">
+       <video  src="/Users/saisuresh/Downloads/java1.mp4"></video>
+       <h3 class="title"> 2.Installing Java </h3>
+    </div>
+    <div class="vid">
+       <video  src="/Users/saisuresh/Downloads/py5.mp4"></video>
+       <h3 class="title">3.Java Object</h3>
+    </div>
+    <div class="vid">
+       <video  src="/Users/saisuresh/Downloads/java1.mp4"></video>
+       <h3 class="title">4.Java Class </h3>
+    </div>
+    <div class="vid">
+       <video  src="/Users/saisuresh/Downloads/py1.mp4"></video>
+       <h3 class="title"> 5.Inheritance</h3>
+    </div>
+    <div class="vid">
+       <video  src="/Users/saisuresh/Downloads/py5.mp4"></video>
+       <h3 class="title">6.Polymorphism</h3>
+    </div>
+    <div class="vid">
+       <video  src="/Users/saisuresh/Downloads/py1.mp4"></video>
+       <h3 class="title"> 7.Abstraction</h3>
+    </div>
+    <div class="vid">
+       <video  src="/Users/saisuresh/Downloads/py1.mp4"></video>
+       <h3 class="title">8.Encapsulation</h3>
+    </div>
+    <div class="vid">
+       <video  src="/Users/saisuresh/Downloads/py1.mp4"></video>
+       <h3 class="title">9.Aggregation</h3>
+    </div>
+    <div class="vid">
+       <video  src="/Users/saisuresh/Downloads/py1.mp4"></video>
+       <h3 class="title">10.What Next!!!</h3>
+    </div>
+    </div>
+   </div>
+   <script>
+       let listVideo = document.querySelectorAll('.video-list .vid');
+       let mainVideo = document.querySelector('.main-video video');
+       let title = document.querySelector('.main-video .title');
+
+       listVideo.forEach(video =>{
+           video.onclick = () =>{
+               listVideo.forEach(vid => vid.classList.remove('active'));
+          video.classList.add('active');
+          if(video.classList.contains('active')){
+             let src = video.children[0].getAttribute('src');
+             mainVideo.src = src;
+             let text =video.children[1].innerHTML;
+             title.innerHTML = text;
+             
+          };
+           };
+       });
+   </script>
+</body>
+</html>
